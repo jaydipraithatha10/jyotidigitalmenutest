@@ -5372,3 +5372,26 @@ body{
     }
 
 }
+
+
+/* Product card spacing fix:
+   Keep price and Add/quantity controls visually close. */
+.product-card .price-row,
+.product-card .product-price-row,
+.product-card .card-bottom,
+.product-card .product-bottom{
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    gap: 6px !important;
+}
+
+.product-card .add-btn,
+.product-card .add-button,
+.product-card .add-to-cart,
+.product-card button[class*="add"]{
+    margin-top: 0 !important;
+}
+
+.product-card .price{
+    margin-bottom: 0 !important;
+}
