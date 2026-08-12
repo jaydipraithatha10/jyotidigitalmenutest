@@ -1099,7 +1099,7 @@ input{
 .product-price{
     color:#57321E !important;
 
-    font-size:15px !important;
+    font-size:19px !important;
 
     font-weight:700 !important;
 
@@ -5601,7 +5601,7 @@ body{
 
     .product-card.premium-product-card .price,
     .product-card.premium-product-card .product-price{
-        font-size:24px !important;
+        font-size:16px !important;
         white-space:nowrap !important;
     }
 }
