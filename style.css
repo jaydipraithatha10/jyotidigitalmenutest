@@ -5490,3 +5490,33 @@ body{
         margin-top:9px !important;
     }
 }
+
+/* =========================================================
+   CART GRAND TOTAL — CONSISTENT FONT
+   Keep "Rs" and the total number in the same font family,
+   weight and visual style.
+========================================================= */
+
+.grand-total,
+.grand-total *,
+#grandTotal,
+#grandTotal *,
+.total-amount,
+.total-amount *,
+.cart-total,
+.cart-total *{
+    font-family:'Outfit', sans-serif !important;
+    font-weight:700 !important;
+    letter-spacing:0 !important;
+}
+
+/* The amount after Rs should not inherit the decorative serif font. */
+.grand-total .total-number,
+.grand-total .amount,
+#grandTotal .total-number,
+#grandTotal .amount,
+.total-amount .total-number,
+.cart-total .total-number{
+    font-family:'Outfit', sans-serif !important;
+    font-weight:700 !important;
+}
