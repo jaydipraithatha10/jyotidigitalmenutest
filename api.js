@@ -1411,7 +1411,7 @@ async function loadCart(){
     </h2>
 
     <div class="total-price">
-        ₹${grandTotal}
+        Rs ${grandTotal}
     </div>
 
     <button
