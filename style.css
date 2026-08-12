@@ -5395,3 +5395,23 @@ body{
 .product-card .price{
     margin-bottom: 0 !important;
 }
+
+/* FINAL PRODUCT PRICE → ADD BUTTON GAP FIX */
+@media (max-width:768px){
+    .product-card.premium-product-card .product-action{
+        margin-top:2px !important;
+        padding-top:0 !important;
+        gap:2px !important;
+    }
+
+    .product-card.premium-product-card .product-meta{
+        margin-bottom:0 !important;
+    }
+}
+
+@media (max-width:380px){
+    .product-card.premium-product-card .product-action{
+        margin-top:2px !important;
+        padding-top:0 !important;
+    }
+}
