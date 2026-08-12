@@ -5415,3 +5415,78 @@ body{
         padding-top:0 !important;
     }
 }
+
+
+/* =========================================================
+   PRODUCT CARD — COMPACT LAYOUT
+   Price and Add button stay close together.
+   Removes the large empty space caused by fixed card height.
+========================================================= */
+
+.product-card.premium-product-card{
+    height:auto !important;
+    min-height:0 !important;
+    align-self:start !important;
+}
+
+.product-card.premium-product-card .product-info{
+    display:flex;
+    flex-direction:column;
+}
+
+.product-card.premium-product-card .product-action{
+    width:100%;
+    margin-top:10px !important;
+    padding-top:0 !important;
+}
+
+.product-card.premium-product-card .premium-add-btn,
+.product-card.premium-product-card .premium-quantity{
+    width:100%;
+    min-height:44px;
+    margin:0 !important;
+}
+
+.product-card.premium-product-card .product-meta{
+    margin-bottom:0 !important;
+}
+
+@media(max-width:768px){
+
+    .product-card.premium-product-card{
+        height:auto !important;
+        min-height:0 !important;
+        padding:8px 6px 10px !important;
+    }
+
+    .product-card.premium-product-card .product-image-wrap{
+        height:172px !important;
+    }
+
+    .product-card.premium-product-card .product-action{
+        margin-top:10px !important;
+        padding-top:0 !important;
+    }
+
+    .product-card.premium-product-card .premium-add-btn,
+    .product-card.premium-product-card .premium-quantity{
+        min-height:40px;
+        border-radius:12px !important;
+    }
+}
+
+@media(max-width:380px){
+
+    .product-card.premium-product-card{
+        height:auto !important;
+        min-height:0 !important;
+    }
+
+    .product-card.premium-product-card .product-image-wrap{
+        height:160px !important;
+    }
+
+    .product-card.premium-product-card .product-action{
+        margin-top:9px !important;
+    }
+}
