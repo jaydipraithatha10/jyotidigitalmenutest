@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Jyoti Gruh Udhyog | Choose Variety</title>
+
+
+<!-- GOOGLE FONT -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- CSS -->
+
+<link
+    rel="stylesheet"
+    href="style.css?v=21"
+>
+
+
+<!-- PWA -->
+
+<link
+    rel="manifest"
+    href="manifest.json"
+>
+
+<meta
+    name="theme-color"
+    content="#6B4226"
+>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="brand-wrap">
+
+        <img
+            src="logo.webp"
+            class="logo"
+            alt="Jyoti Gruh Udhyog Logo"
+            width="70"
+            height="70"
+            loading="eager"
+            decoding="async"
+        >
+
+        <div class="brand-text">
+
+            <h1>
+                Jyoti Gruh Udhyog
+            </h1>
+
+            <p>
+                Taste Of Home In Every Bite
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+    <!-- =================================================
+         PAGE HEADER
+    ================================================== -->
+
+    <section class="subcategory-page-header">
+
+        <button
+            class="back-btn"
+            onclick="history.back()"
+            aria-label="Go Back"
+        >
+            ←
+        </button>
+
+
+        <div class="subcategory-heading">
+
+            <span class="section-kicker">
+                EXPLORE VARIETIES
+            </span>
+
+            <h2 class="subcategory-title">
+                Choose Variety
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SUBCATEGORY LIST
+    ================================================== -->
+
+    <section class="subcategory-section">
+
+        <div
+            id="subCategoryList"
+            class="subcategory-grid premium-subcategory-grid"
+        ></div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <h3>
+        Jyoti Gruh Udhyog
+    </h3>
+
+    <p>
+        Taste Of Home In Every Bite
+    </p>
+
+
+    <div class="footer-buttons">
+
+        <a
+            href="tel:+919712149344"
+            class="call-btn"
+        >
+            📞 Call Now
+        </a>
+
+
+        <a
+            href="https://wa.me/919712149344"
+            target="_blank"
+            rel="noopener"
+            class="whatsapp-btn-footer"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 Jyoti Gruh Udhyog
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     API JS
+===================================================== -->
+
+<script
+    src="api.js?v=21"
+    defer
+></script>
+
+
+
+<!-- =====================================================
+     SERVICE WORKER
+===================================================== -->
+
+<script>
+
+if("serviceWorker" in navigator){
+
+    window.addEventListener(
+        "load",
+        function(){
+
+            navigator
+                .serviceWorker
+                .register("service-worker.js")
+                .then(
+                    () =>
+                        console.log(
+                            "Service Worker Registered"
+                        )
+                )
+                .catch(
+                    err =>
+                        console.log(err)
+                );
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

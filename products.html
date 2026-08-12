@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Products | Jyoti Gruh Udhyog</title>
+
+
+<!-- GOOGLE FONT -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- CSS -->
+
+<link
+    rel="stylesheet"
+    href="style.css?v=22"
+>
+
+
+<!-- PWA -->
+
+<link
+    rel="manifest"
+    href="manifest.json"
+>
+
+<meta
+    name="theme-color"
+    content="#6B4226"
+>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="brand-wrap">
+
+        <img
+            src="logo.webp"
+            class="logo"
+            alt="Jyoti Gruh Udhyog Logo"
+            width="70"
+            height="70"
+            loading="eager"
+            decoding="async"
+        >
+
+        <div class="brand-text">
+
+            <h1>
+                Jyoti Gruh Udhyog
+            </h1>
+
+            <p>
+                Taste Of Home In Every Bite
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="products-page">
+
+
+    <!-- =================================================
+         PAGE HEADER
+    ================================================== -->
+
+    <section class="products-page-header">
+
+        <button
+            class="back-btn"
+            onclick="history.back()"
+            aria-label="Go Back"
+        >
+            ←
+        </button>
+
+
+        <div class="products-heading">
+
+            <span class="section-kicker">
+                FRESH FROM OUR KITCHEN
+            </span>
+
+            <h2 class="products-title">
+                Our Products
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SEARCH
+    ================================================== -->
+
+    <section class="products-search-section">
+
+        <div class="search-box">
+
+            <span class="search-icon">
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search Products..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PRODUCT SECTION
+    ================================================= -->
+
+    <section class="products-section">
+
+        <div class="products-topbar">
+
+            <div>
+
+                <span class="section-kicker">
+                    JYOTI COLLECTION
+                </span>
+
+                <h2 class="section-title">
+                    🛍️ All Products
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT LIST -->
+
+        <div
+            id="productList"
+            class="product-grid premium-product-grid"
+        ></div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FLOATING CART
+===================================================== -->
+
+<div
+    id="viewCartBtn"
+    class="floating-cart"
+    onclick="location.href='cart.html'"
+    style="display:none;"
+>
+
+    🛒
+
+    <span id="cartCount">
+        0
+    </span>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <h3>
+        Jyoti Gruh Udhyog
+    </h3>
+
+    <p>
+        Taste Of Home In Every Bite
+    </p>
+
+
+    <div class="footer-buttons">
+
+        <a
+            href="tel:+919712149344"
+            class="call-btn"
+        >
+            📞 Call Now
+        </a>
+
+
+        <a
+            href="https://wa.me/919712149344"
+            target="_blank"
+            rel="noopener"
+            class="whatsapp-btn-footer"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 Jyoti Gruh Udhyog
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     IMAGE ZOOM
+===================================================== -->
+
+<div
+    id="imageModal"
+    class="image-modal"
+    onclick="closeImage()"
+>
+
+    <span
+        class="close-image"
+        onclick="closeImage()"
+    >
+        ×
+    </span>
+
+
+    <img
+        id="zoomImage"
+        class="zoom-image"
+        alt="Product Image"
+        onclick="event.stopPropagation()"
+    >
+
+</div>
+
+
+
+<!-- =====================================================
+     API
+===================================================== -->
+
+<script
+    src="api.js?v=22"
+    defer
+></script>
+
+
+
+<!-- =====================================================
+     SERVICE WORKER
+===================================================== -->
+
+<script>
+
+if("serviceWorker" in navigator){
+
+    window.addEventListener(
+        "load",
+        function(){
+
+            navigator
+                .serviceWorker
+                .register("service-worker.js")
+                .then(
+                    () =>
+                        console.log(
+                            "Service Worker Registered"
+                        )
+                )
+                .catch(
+                    err =>
+                        console.log(err)
+                );
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

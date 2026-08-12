@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Cart | Jyoti Gruh Udhyog</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="style.css?v=32">
+
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#6B4226">
+
+
+<style>
+
+/* =========================================================
+   JYOTI GRUH UDHYOG
+   PREMIUM CART PAGE
+   CART FUNCTIONALITY UNCHANGED
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+body{
+    background:
+        linear-gradient(
+            180deg,
+            #FBF8F2 0%,
+            #F6EFE5 100%
+        );
+}
+
+
+/* =========================================================
+   PREMIUM CART HEADER
+========================================================= */
+
+.cart-header{
+    width:100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFFDF9 0%,
+            #F8EDDD 100%
+        );
+
+    border-bottom:
+        1px solid #E4D7C5;
+
+    box-shadow:
+        0 8px 25px
+        rgba(70,42,23,.08);
+
+    text-align:center;
+
+    padding:
+        22px 15px 24px;
+
+    position:relative;
+
+    z-index:1000;
+}
+
+
+/* GOLD TOP LINE */
+
+.cart-header::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #C9A227,
+            #E8CE7D,
+            #C9A227,
+            transparent
+        );
+}
+
+
+/* LOGO */
+
+.cart-header .cart-logo{
+    width:105px;
+    height:105px;
+
+    object-fit:cover;
+
+    display:block;
+
+    margin:0 auto 10px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    padding:5px;
+
+    border:
+        1px solid #D8B85A;
+
+    box-shadow:
+        0 8px 25px
+        rgba(70,42,23,.16),
+        0 0 18px
+        rgba(201,162,39,.12);
+}
+
+
+/* BRAND */
+
+.cart-header h1{
+    margin:0;
+
+    color:#6B4226;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:34px;
+
+    line-height:1.15;
+
+    font-weight:700;
+
+    text-align:center;
+}
+
+
+/* TAGLINE */
+
+.cart-header p{
+    margin:7px 0 0;
+
+    color:#8C7763;
+
+    font-family:'Outfit',sans-serif;
+
+    font-size:15px;
+
+    line-height:1.3;
+
+    text-align:center;
+}
+
+
+/* GOLD DIVIDER */
+
+.cart-header .header-divider{
+    width:90px;
+
+    height:2px;
+
+    margin:14px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #C9A227,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.cart-main{
+    width:100%;
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding:
+        25px 15px 55px;
+}
+
+
+/* =========================================================
+   CART TITLE
+========================================================= */
+
+.cart-heading{
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:24px;
+
+    text-align:center;
+}
+
+
+.cart-heading-icon{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #75482B,
+            #4F2D1A
+        );
+
+    color:#fff;
+
+    font-size:22px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(65,38,20,.20);
+}
+
+
+.cart-heading h2{
+    margin:0;
+
+    color:#4F2D1A;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:32px;
+
+    line-height:1.1;
+}
+
+
+/* =========================================================
+   CART LIST
+========================================================= */
+
+#cartList{
+    width:100%;
+}
+
+
+/* =========================================================
+   EXISTING CART ITEMS
+   PREMIUM OVERRIDES
+========================================================= */
+
+.cart-item{
+    position:relative;
+
+    width:100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF,
+            #FFFDF9
+        ) !important;
+
+    border:
+        1px solid #E3D5C1 !important;
+
+    border-radius:24px !important;
+
+    padding:18px !important;
+
+    margin-bottom:18px !important;
+
+    box-shadow:
+        0 10px 28px
+        rgba(65,38,20,.08) !important;
+
+    overflow:hidden;
+}
+
+
+/* GOLD TOP LINE */
+
+.cart-item::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:18%;
+    right:18%;
+
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #C9A227,
+            #E8CE7D,
+            #C9A227,
+            transparent
+        );
+}
+
+
+/* CART IMAGE */
+
+.cart-item img{
+    width:105px !important;
+    height:105px !important;
+
+    object-fit:contain;
+
+    border-radius:18px !important;
+
+    background:#FAF6EF;
+
+    border:
+        1px solid #E6D9C6;
+
+    padding:5px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(70,42,23,.08);
+}
+
+
+/* PRODUCT NAME */
+
+.cart-info h3{
+    color:#60391F !important;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:22px !important;
+
+    font-weight:700;
+
+    margin-bottom:5px !important;
+}
+
+
+/* WEIGHT */
+
+.cart-info p{
+    color:#8A8178 !important;
+
+    font-size:15px;
+
+    margin-bottom:5px;
+}
+
+
+/* PRICE */
+
+.cart-price{
+    color:#57321E !important;
+
+    font-size:20px !important;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.qty-box{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:11px 0;
+}
+
+
+.qty-btn{
+    width:42px !important;
+    height:42px !important;
+
+    border:
+        1px solid #D1AA43 !important;
+
+    border-radius:12px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #754522,
+            #4E2A18
+        ) !important;
+
+    color:#fff !important;
+
+    font-size:22px !important;
+
+    box-shadow:
+        0 5px 12px
+        rgba(75,42,24,.18);
+}
+
+
+.qty-number{
+    min-width:30px;
+
+    color:#60391F !important;
+
+    font-size:20px !important;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   REMOVE
+========================================================= */
+
+.remove-btn{
+    border:
+        1px solid #E9A19E !important;
+
+    border-radius:12px !important;
+
+    background:#FFF1F0 !important;
+
+    color:#C62828 !important;
+
+    padding:
+        9px 15px !important;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   GRAND TOTAL
+========================================================= */
+
+.cart-total{
+    width:100%;
+
+    margin-top:25px;
+
+    padding:
+        28px 20px 25px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF,
+            #FFF8EC
+        ) !important;
+
+    border:
+        1px solid #DCCBAF !important;
+
+    border-radius:26px !important;
+
+    text-align:center;
+
+    box-shadow:
+        0 12px 32px
+        rgba(65,38,20,.10) !important;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* GOLD TOP */
+
+.cart-total::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:20%;
+    right:20%;
+
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #C9A227,
+            #E8CE7D,
+            #C9A227,
+            transparent
+        );
+}
+
+
+/* TOTAL TITLE */
+
+.cart-total h2{
+    margin:0 0 8px !important;
+
+    color:#6B4226 !important;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:28px !important;
+}
+
+
+/* TOTAL PRICE */
+
+.total-price{
+    color:#4F2D1A !important;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:43px !important;
+
+    font-weight:700;
+
+    margin-bottom:20px !important;
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp-btn{
+    width:100% !important;
+
+    height:57px !important;
+
+    border:
+        2px solid #73E6A1 !important;
+
+    border-radius:18px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #128C4A,
+            #25D366,
+            #128C4A
+        ) !important;
+
+    color:#fff !important;
+
+    font-family:'Outfit',sans-serif;
+
+    font-size:18px !important;
+
+    font-weight:700 !important;
+
+    box-shadow:
+        0 8px 20px
+        rgba(18,140,74,.22) !important;
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+.empty-cart{
+    width:100%;
+
+    padding:65px 20px !important;
+
+    background:#fff;
+
+    border:
+        1px solid #E4D9C8;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 24px
+        rgba(65,38,20,.06);
+}
+
+
+.empty-cart h2{
+    color:#6B4226 !important;
+
+    font-family:
+        'Playfair Display',
+        serif;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.cart-footer{
+    width:100%;
+
+    padding:
+        45px 15px 28px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDF9 0%,
+            #F8EDDD 100%
+        );
+
+    border-top:
+        4px solid #C9A227;
+
+    box-shadow:
+        0 -6px 22px
+        rgba(60,35,20,.06);
+}
+
+
+.cart-footer h3{
+    margin:0 0 8px;
+
+    color:#6B4226;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:27px;
+}
+
+
+.cart-footer p{
+    color:#8C7763;
+
+    font-size:15px;
+
+    margin:0;
+}
+
+
+.cart-footer .footer-buttons{
+    margin:
+        22px auto 24px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+    .cart-header{
+        padding:
+            18px 12px 20px;
+    }
+
+    .cart-header .cart-logo{
+        width:92px;
+        height:92px;
+
+        margin-bottom:8px;
+    }
+
+    .cart-header h1{
+        font-size:29px;
+    }
+
+    .cart-header p{
+        font-size:14px;
+    }
+
+
+    .cart-main{
+        padding:
+            20px 12px 45px;
+    }
+
+
+    .cart-heading{
+        margin-bottom:18px;
+    }
+
+    .cart-heading-icon{
+        width:45px;
+        height:45px;
+
+        font-size:20px;
+    }
+
+    .cart-heading h2{
+        font-size:29px;
+    }
+
+
+    .cart-item{
+        padding:15px !important;
+
+        border-radius:21px !important;
+
+        gap:12px !important;
+    }
+
+
+    .cart-item img{
+        width:90px !important;
+        height:90px !important;
+    }
+
+
+    .cart-info h3{
+        font-size:20px !important;
+    }
+
+
+    .cart-price{
+        font-size:18px !important;
+    }
+
+
+    .qty-btn{
+        width:40px !important;
+        height:40px !important;
+    }
+
+
+    .cart-total{
+        padding:
+            25px 15px 22px !important;
+
+        border-radius:23px !important;
+    }
+
+
+    .cart-total h2{
+        font-size:27px !important;
+    }
+
+
+    .total-price{
+        font-size:39px !important;
+    }
+
+
+    .whatsapp-btn{
+        height:54px !important;
+
+        font-size:17px !important;
+    }
+
+
+    .cart-footer{
+        padding:
+            40px 12px 25px;
+    }
+
+    .cart-footer h3{
+        font-size:24px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media(max-width:380px){
+
+    .cart-header .cart-logo{
+        width:82px;
+        height:82px;
+    }
+
+    .cart-header h1{
+        font-size:26px;
+    }
+
+    .cart-header p{
+        font-size:13px;
+    }
+
+
+    .cart-heading h2{
+        font-size:27px;
+    }
+
+
+    .cart-item{
+        padding:12px !important;
+    }
+
+
+    .cart-item img{
+        width:78px !important;
+        height:78px !important;
+    }
+
+
+    .cart-info h3{
+        font-size:18px !important;
+    }
+
+
+    .cart-price{
+        font-size:17px !important;
+    }
+
+
+    .qty-btn{
+        width:37px !important;
+        height:37px !important;
+
+        font-size:19px !important;
+    }
+
+
+    .total-price{
+        font-size:36px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PREMIUM HEADER
+========================================================= -->
+
+<header class="cart-header">
+
+    <img
+        src="logo.webp"
+        class="cart-logo"
+        alt="Jyoti Gruh Udhyog"
+        width="105"
+        height="105"
+    >
+
+    <h1>
+        Jyoti Gruh Udhyog
+    </h1>
+
+    <p>
+        Pure &amp; Homemade Products
+    </p>
+
+    <div class="header-divider"></div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN CART
+========================================================= -->
+
+<main class="cart-main">
+
+    <section class="category-section">
+
+        <div class="cart-heading">
+
+            <div class="cart-heading-icon">
+                🛒
+            </div>
+
+            <h2>
+                My Cart
+            </h2>
+
+        </div>
+
+
+        <!-- IMPORTANT:
+             api.js cart rendering goes here
+        -->
+
+        <div id="cartList"></div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     PREMIUM FOOTER
+========================================================= -->
+
+<footer class="cart-footer">
+
+    <h3>
+        Jyoti Gruh Udhyog
+    </h3>
+
+    <p>
+        Pure &amp; Homemade Products
+    </p>
+
+
+    <div class="footer-buttons">
+
+        <a
+            href="tel:+919712149344"
+            class="call-btn"
+        >
+            📞 Call Now
+        </a>
+
+
+        <a
+            href="https://wa.me/919712149344"
+            target="_blank"
+            rel="noopener"
+            class="whatsapp-btn-footer"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 Jyoti Gruh Udhyog
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     API JS
+========================================================= -->
+
+<script
+    src="api.js?v=32"
+    defer
+></script>
+
+
+<!-- =========================================================
+     SERVICE WORKER
+========================================================= -->
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener(
+        "load",
+        function(){
+
+            navigator.serviceWorker
+                .register("service-worker.js")
+                .then(function(){
+
+                    console.log(
+                        "Service Worker Registered"
+                    );
+
+                })
+                .catch(function(error){
+
+                    console.log(
+                        "Service Worker Error:",
+                        error
+                    );
+
+                });
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

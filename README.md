@@ -1,1 +1,1 @@
-# jyotidigitalmenutest
+# jyoti-digital-menu
