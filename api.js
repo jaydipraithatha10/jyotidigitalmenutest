@@ -1031,10 +1031,78 @@ function addToCart(id){
 
     updateCartButton();
 
-    loadProducts();
+    updateProductAction(cleanId);
 
 }
 
+
+/* =========================================================
+   UPDATE ONLY THE CLICKED PRODUCT ACTION
+   Prevents the whole product grid from re-rendering.
+========================================================= */
+
+function updateProductAction(id){
+
+    const container =
+        document.getElementById(
+            `cart-${id}`
+        );
+
+    if(!container)
+        return;
+
+    const item =
+        cart.find(
+            p =>
+            String(p.id).trim() ===
+            String(id).trim()
+        );
+
+    const qty =
+        item
+        ? Number(item.qty)
+        : 0;
+
+    if(qty <= 0){
+
+        container.innerHTML = `
+            <button
+                class="premium-add-btn"
+                onclick="addToCart('${id}')"
+            >
+                <span class="add-symbol">+</span>
+                Add
+            </button>
+        `;
+
+        return;
+    }
+
+    container.innerHTML = `
+        <div class="premium-quantity">
+
+            <button
+                class="premium-qty-btn"
+                onclick="changeQty('${id}',-1)"
+            >
+                −
+            </button>
+
+            <span class="premium-qty-number">
+                ${qty}
+            </span>
+
+            <button
+                class="premium-qty-btn"
+                onclick="changeQty('${id}',1)"
+            >
+                +
+            </button>
+
+        </div>
+    `;
+
+}
 
 /* =========================================================
    CHANGE QUANTITY
@@ -1095,7 +1163,7 @@ function changeQty(
 
     updateCartButton();
 
-    loadProducts();
+    updateProductAction(cleanId);
 
     loadCart();
 
