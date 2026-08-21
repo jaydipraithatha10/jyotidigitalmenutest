@@ -1,618 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jyoti Gruh Udhyog</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-<!-- GOOGLE FONT -->
+<link rel="stylesheet" href="style.css?v=33">
 
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet"
->
-
-
-<!-- MAIN CSS -->
-
-<link
-    rel="stylesheet"
-    href="style.css?v=33"
->
-
-
-<!-- PWA -->
-
-<meta
-    name="theme-color"
-    content="#6B4226"
->
-
-<link
-    rel="manifest"
-    href="manifest.json"
->
-
+<meta name="theme-color" content="#6B4226">
+<link rel="manifest" href="manifest.json">
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     WELCOME SCREEN
-===================================================== -->
-
-<div
-    id="welcomeOverlay"
-    class="welcome-overlay"
->
-
+<div id="welcomeOverlay" class="welcome-overlay">
     <div class="welcome-box">
-
-        <img
-            src="welcome-cartoon.webp"
-            class="welcome-cartoon"
-            alt="Jyoti Gruh Udhyog Welcome"
-        >
-
+        <img src="welcome-cartoon.webp" class="welcome-cartoon"
+             alt="Jyoti Gruh Udhyog Welcome">
     </div>
-
 </div>
 
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header class="header">
-
     <div class="brand-wrap">
-
-        <img
-            src="logo.webp"
-            class="logo"
-            alt="Jyoti Gruh Udhyog"
-            width="110"
-            height="110"
-            loading="eager"
-            decoding="async"
-        >
-
+        <img src="logo.webp" class="logo" alt="Jyoti Gruh Udhyog"
+             width="110" height="110" loading="eager" decoding="async">
         <div class="brand-text">
-
-            <h1>
-                Jyoti Gruh Udhyog
-            </h1>
-
-            <p>
-                Taste Of Home In Every Bite
-            </p>
-
+            <h1>Jyoti Gruh Udhyog</h1>
+            <p>Taste Of Home In Every Bite</p>
         </div>
-
     </div>
-
 </header>
-
-
-
-<!-- =====================================================
-     MAIN
-===================================================== -->
 
 <main>
 
+    <!-- PREMIUM HERO -->
+    <section class="home-hero">
+        <div class="hero-banner">
+            <img src="banner3.webp" alt="Jyoti Gruh Udhyog"
+                 loading="eager" decoding="async"
+                 onerror="this.src='placeholder.webp'">
+        </div>
+    </section>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="home-hero">
-
-    <div class="hero-banner">
-
-        <img
-            src="banner3.webp"
-            alt="Jyoti Gruh Udhyog"
-            loading="eager"
-            decoding="async"
-            onerror="this.src='placeholder.webp'"
-        >
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     PREMIUM QUICK ACTIONS
-===================================================== -->
-
-<section class="premium-home-actions" aria-label="Quick actions">
-
-    <a href="#categoryList" class="premium-action-card">
-        <span class="premium-action-icon">✦</span>
-        <span>
-            <strong>Explore Menu</strong>
-            <small>Browse all varieties</small>
-        </span>
-        <b>→</b>
-    </a>
-
-    <a href="https://wa.me/919712149344" target="_blank" rel="noopener" class="premium-action-card premium-action-whatsapp">
-        <span class="premium-action-icon">💬</span>
-        <span>
-            <strong>Order on WhatsApp</strong>
-            <small>Quick & easy ordering</small>
-        </span>
-        <b>→</b>
-    </a>
-
-</section>
-
-
-
-<!-- =====================================================
-     SEARCH
-===================================================== -->
-
-<section class="home-search-section">
-
-    <div class="search-box">
-
-        <span class="search-icon">
-            🔍
-        </span>
-
-        <input
-            type="text"
-            id="searchBox"
-            placeholder="Search Products..."
-            autocomplete="off"
-        >
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     OUR PRODUCTS
-===================================================== -->
-
-<section class="home-section">
-
-    <div class="home-section-heading">
-
-        <div>
-
-            <span class="section-kicker">
-                EXPLORE OUR COLLECTION
+    <!-- QUICK ACTIONS -->
+    <section class="premium-home-actions" aria-label="Quick actions">
+        <a href="#categoryList" class="premium-action-card">
+            <span class="premium-action-icon">✦</span>
+            <span>
+                <strong>Explore Menu</strong>
+                <small>Browse all varieties</small>
             </span>
+            <b>→</b>
+        </a>
 
-            <h2>
-                Our Products
-            </h2>
+        <a href="https://wa.me/919712149344" target="_blank" rel="noopener"
+           class="premium-action-card premium-action-whatsapp">
+            <span class="premium-action-icon">💬</span>
+            <span>
+                <strong>Order on WhatsApp</strong>
+                <small>Quick & easy ordering</small>
+            </span>
+            <b>→</b>
+        </a>
+    </section>
 
+    <!-- FEATURED PRODUCTS -->
+    <section id="featuredSection" class="featured-section" hidden>
+        <div class="featured-heading">
+            <div>
+                <span class="section-kicker">OUR SPECIAL PICKS</span>
+                <h2>⭐ Featured Products</h2>
+                <p>Our selected favourites for you</p>
+            </div>
         </div>
+        <div id="featuredProductList" class="featured-product-grid"></div>
+    </section>
 
+    <!-- SEARCH -->
+    <section class="home-search-section">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchBox"
+                   placeholder="Search Products..."
+                   autocomplete="off">
+        </div>
+    </section>
 
-        <button
-            class="heading-arrow"
-            onclick="
-                document
-                .getElementById('whyJyoti')
-                .scrollIntoView({
-                    behavior:'smooth'
-                })
-            "
-            aria-label="Scroll Down"
-        >
-            ↓
-        </button>
-
-    </div>
-
-
-    <!-- CATEGORY LIST -->
-
-    <div
-        id="categoryList"
-        class="category-grid"
-    ></div>
-
-</section>
-
-
-
-<!-- =====================================================
-     WHY JYOTI
-===================================================== -->
-
-<section
-    id="whyJyoti"
-    class="trust-section"
->
-
-    <div class="trust-heading">
-
-        <span class="section-kicker">
-            WHY JYOTI
-        </span>
-
-        <h2>
-            Made With Love,<br>
-            Served With Taste
-        </h2>
-
-    </div>
-
-
-    <div class="trust-grid">
-
-
-        <!-- CARD 1 -->
-
-        <div class="trust-card">
-
-            <div class="trust-icon">
-                🏠
+    <!-- CATEGORIES -->
+    <section class="home-section">
+        <div class="home-section-heading">
+            <div>
+                <span class="section-kicker">EXPLORE OUR COLLECTION</span>
+                <h2>Our Products</h2>
             </div>
 
-            <h3>
-                Taste Of Home
-            </h3>
-
-            <p>
-                Traditional taste made with care.
-            </p>
-
+            <button class="heading-arrow"
+                    onclick="document.getElementById('whyJyoti').scrollIntoView({behavior:'smooth'})"
+                    aria-label="Scroll Down">↓</button>
         </div>
 
+        <div id="categoryList" class="category-grid"></div>
+    </section>
 
-        <!-- CARD 2 -->
+    <!-- WHY JYOTI -->
+    <section id="whyJyoti" class="trust-section">
+        <div class="trust-heading">
+            <span class="section-kicker">WHY JYOTI</span>
+            <h2>Made With Love,<br>Served With Taste</h2>
+        </div>
 
-        <div class="trust-card">
-
-            <div class="trust-icon">
-                ✨
+        <div class="trust-grid">
+            <div class="trust-card">
+                <div class="trust-icon">🏠</div>
+                <h3>Taste Of Home</h3>
+                <p>Traditional taste made with care.</p>
             </div>
 
-            <h3>
-                Premium Quality
-            </h3>
-
-            <p>
-                Carefully selected quality ingredients.
-            </p>
-
-        </div>
-
-
-        <!-- CARD 3 -->
-
-        <div class="trust-card">
-
-            <div class="trust-icon">
-                ❤️
+            <div class="trust-card">
+                <div class="trust-icon">✨</div>
+                <h3>Premium Quality</h3>
+                <p>Carefully selected quality ingredients.</p>
             </div>
 
-            <h3>
-                Made With Care
-            </h3>
-
-            <p>
-                Every product prepared with love.
-            </p>
-
+            <div class="trust-card">
+                <div class="trust-icon">❤️</div>
+                <h3>Made With Care</h3>
+                <p>Every product prepared with love.</p>
+            </div>
         </div>
+    </section>
 
+    <!-- REVIEWS -->
+    <section class="home-reviews-section">
+        <span class="section-kicker">CUSTOMER LOVE</span>
+        <h2>What Our Customers Say</h2>
+        <div class="review-highlight">
+            <div class="review-stars">★★★★★</div>
+            <p>“Taste of home in every bite.”</p>
+            <small>We value every customer's feedback.</small>
+        </div>
+        <a class="review-button"
+           href="https://wa.me/919712149344?text=Hello%20Jyoti%20Gruh%20Udhyog%2C%20I%20would%20like%20to%20give%20a%20review."
+           target="_blank" rel="noopener">
+            ⭐ Give Your Review
+        </a>
+    </section>
 
-    </div>
+    <!-- FINAL CTA -->
+    <section class="home-order-cta">
+        <span>JYOTI GRUH UDHYOG</span>
+        <h2>Ready To Taste<br>The Difference?</h2>
+        <p>Premium sweets, namkeen and homemade favourites.</p>
+        <div class="home-cta-buttons">
+            <a href="#categoryList" class="home-cta-products">🛍️ View Products</a>
+            <a href="https://wa.me/919712149344" target="_blank" rel="noopener"
+               class="home-cta-whatsapp">💬 Order on WhatsApp</a>
+        </div>
+    </section>
 
-</section>
-
-
-
-<!-- =====================================================
-     BOTTOM BRAND
-===================================================== -->
-
-<section class="brand-message">
-
-    <div class="brand-message-inner">
-
-        <span>
-            JYOTI GRUH UDHYOG
-        </span>
-
-        <h2>
-            Taste Of Home<br>
-            In Every Bite
-        </h2>
-
-        <p>
-            Traditional taste, premium quality
-            and homemade care in every bite.
-        </p>
-
-    </div>
-
-</section>
-
+    <!-- BRAND -->
+    <section class="brand-message">
+        <div class="brand-message-inner">
+            <span>JYOTI GRUH UDHYOG</span>
+            <h2>Taste Of Home<br>In Every Bite</h2>
+            <p>Traditional taste, premium quality and homemade care in every bite.</p>
+        </div>
+    </section>
 
 </main>
 
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer class="footer">
-
-    <h3>
-        Jyoti Gruh Udhyog
-    </h3>
-
-    <p>
-        Taste Of Home In Every Bite
-    </p>
-
+    <h3>Jyoti Gruh Udhyog</h3>
+    <p>Taste Of Home In Every Bite</p>
 
     <div class="footer-buttons">
-
-        <a
-            href="tel:+919712149344"
-            class="call-btn"
-        >
-            📞 Call Now
-        </a>
-
-
-        <a
-            href="https://wa.me/919712149344"
-            target="_blank"
-            rel="noopener"
-            class="whatsapp-btn-footer"
-        >
-            💬 WhatsApp
-        </a>
-
+        <a href="tel:+919712149344" class="call-btn">📞 Call Now</a>
+        <a href="https://wa.me/919712149344" target="_blank" rel="noopener"
+           class="whatsapp-btn-footer">💬 WhatsApp</a>
     </div>
 
-
-    <p class="copyright">
-        © 2026 Jyoti Gruh Udhyog
-    </p>
-
+    <p class="copyright">© 2026 Jyoti Gruh Udhyog</p>
 </footer>
 
-
-
-<!-- =====================================================
-     FLOATING CART
-===================================================== -->
-
-<div
-    id="viewCartBtn"
-    class="floating-cart"
-    onclick="location.href='cart.html'"
-    style="display:none;"
->
-
-    🛒
-
-    <span id="cartCount">
-        0
-    </span>
-
+<div id="viewCartBtn" class="floating-cart"
+     onclick="location.href='cart.html'" style="display:none;">
+    🛒 <span id="cartCount">0</span>
 </div>
 
-
-
-<!-- =====================================================
-     IMAGE MODAL
-===================================================== -->
-
-<div
-    id="imageModal"
-    class="image-modal"
-    onclick="closeImage()"
->
-
-    <span
-        class="close-image"
-        onclick="closeImage()"
-    >
-        ×
-    </span>
-
-
-    <img
-        id="zoomImage"
-        class="zoom-image"
-        alt="Product Image"
-        onclick="event.stopPropagation()"
-    >
-
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+    <span class="close-image" onclick="closeImage()">×</span>
+    <img id="zoomImage" class="zoom-image" alt="Product Image"
+         onclick="event.stopPropagation()">
 </div>
-
-
-
-<!-- =====================================================
-     WELCOME ANIMATION + VOICE
-===================================================== -->
 
 <script>
+window.addEventListener("load", function(){
+    const welcome = document.getElementById("welcomeOverlay");
+    if(!welcome) return;
 
-window.addEventListener(
-    "load",
-    function(){
-
-        const welcome =
-            document.getElementById(
-                "welcomeOverlay"
+    setTimeout(function(){
+        if("speechSynthesis" in window){
+            window.speechSynthesis.cancel();
+            const voice = new SpeechSynthesisUtterance(
+                "Jyoti Gruh Udhyog માં આપનું સ્વાગત છે."
             );
+            voice.lang = "gu-IN";
+            voice.rate = 0.9;
+            voice.pitch = 1.05;
+            voice.volume = 1;
+            window.speechSynthesis.speak(voice);
+        }
+    }, 500);
 
-
-        if(!welcome)
-            return;
-
-
-        /* ================================================
-           WELCOME VOICE
-        ================================================= */
-
-        setTimeout(
-            function(){
-
-                if(
-                    "speechSynthesis"
-                    in window
-                ){
-
-                    window.speechSynthesis.cancel();
-
-
-                    const voice =
-                        new SpeechSynthesisUtterance(
-                            "Jyoti Gruh Udhyog માં આપનું સ્વાગત છે."
-                        );
-
-
-                    voice.lang = "gu-IN";
-
-                    voice.rate = 0.9;
-
-                    voice.pitch = 1.05;
-
-                    voice.volume = 1;
-
-
-                    window.speechSynthesis.speak(
-                        voice
-                    );
-
-                }
-
-            },
-            500
-        );
-
-
-        /* ================================================
-           ORIGINAL WELCOME ANIMATION TIMING
-        ================================================= */
-
-        setTimeout(
-            function(){
-
-                welcome.classList.add(
-                    "hide-welcome"
-                );
-
-
-                setTimeout(
-                    function(){
-
-                        welcome.remove();
-
-                    },
-                    800
-                );
-
-            },
-            3500
-        );
-
-    }
-);
-
+    setTimeout(function(){
+        welcome.classList.add("hide-welcome");
+        setTimeout(function(){ welcome.remove(); }, 800);
+    }, 3500);
+});
 </script>
 
-
-
-<!-- =====================================================
-     API JS
-===================================================== -->
-
-<script
-    src="api.js?v=31"
-    defer
-></script>
-
-
-
-<!-- =====================================================
-     SERVICE WORKER
-===================================================== -->
+<script src="api.js?v=32" defer></script>
 
 <script>
-
-if(
-    "serviceWorker"
-    in navigator
-){
-
-    window.addEventListener(
-        "load",
-        function(){
-
-            navigator
-                .serviceWorker
-                .register(
-                    "service-worker.js"
-                )
-                .then(
-                    function(){
-
-                        console.log(
-                            "Service Worker Registered"
-                        );
-
-                    }
-                )
-                .catch(
-                    function(error){
-
-                        console.log(
-                            "Service Worker Error:",
-                            error
-                        );
-
-                    }
-                );
-
-        }
-    );
-
+if("serviceWorker" in navigator){
+    window.addEventListener("load", function(){
+        navigator.serviceWorker.register("service-worker.js")
+        .then(function(){ console.log("Service Worker Registered"); })
+        .catch(function(error){ console.log("Service Worker Error:", error); });
+    });
 }
-
 </script>
-
 
 </body>
-
 </html>
