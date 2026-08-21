@@ -114,18 +114,6 @@ body>main{flex:1}
 .trust-card h3{color:#6B4226;font-size:21px;margin-bottom:9px}
 .trust-card p{color:#8A8178;font-size:15px;line-height:1.5}
 
-.featured-section{width:94%;max-width:1400px;margin:10px auto 8px;padding:20px 0 8px}
-.featured-heading{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px}
-.featured-heading h2{margin-top:5px;color:#4E2A18;font-family:'Playfair Display',serif;font-size:34px;line-height:1.1}
-.featured-heading p{margin-top:5px;color:#8C7763;font-size:13px}
-.featured-product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.featured-card{position:relative;background:linear-gradient(180deg,#fff,#fff8ed);border:1px solid #dfc991;border-radius:22px;padding:10px;box-shadow:0 10px 26px rgba(65,38,20,.09);overflow:hidden}
-.featured-card:before{content:"FEATURED";position:absolute;top:9px;left:9px;z-index:3;padding:5px 8px;border-radius:10px;background:linear-gradient(135deg,#C9A227,#E8CE7D);color:#4B2B17;font-size:8px;font-weight:800;letter-spacing:1px}
-.featured-card img{width:100%;aspect-ratio:1/1;object-fit:contain;border-radius:16px;background:#fff}
-.featured-card h3{margin:10px 4px 5px;color:#5D351D;font-size:17px;line-height:1.2;text-align:center}
-.featured-meta{display:flex;justify-content:center;align-items:center;gap:6px;white-space:nowrap;color:#806F60;font-size:14px}
-.featured-price{color:#8C651F;font-size:19px;font-weight:800}
-.featured-add{width:100%;min-height:40px;margin-top:9px;border:1px solid #D1AA43;border-radius:22px;background:linear-gradient(135deg,#754522,#4E2A18);color:#fff;font-size:15px;font-weight:700}
 
 .home-reviews-section{width:94%;max-width:1000px;margin:0 auto;padding:42px 20px 48px;text-align:center}
 .home-reviews-section h2{margin-top:7px;color:#4E2A18;font-family:'Playfair Display',serif;font-size:34px}
@@ -198,16 +186,6 @@ body>main{flex:1}
     .trust-icon{width:50px;height:50px;margin-bottom:13px;font-size:25px}
     .trust-card h3{font-size:15px}
     .trust-card p{font-size:12px}
-    .featured-section{width:94%;padding-top:14px}
-    .featured-heading h2{font-size:28px}
-    .featured-heading p{font-size:11px}
-    .featured-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .featured-card{border-radius:18px;padding:7px}
-    .featured-card:before{top:7px;left:7px;font-size:7px}
-    .featured-card h3{font-size:14px;min-height:34px;display:flex;align-items:center;justify-content:center}
-    .featured-card .featured-meta{font-size:12px}
-    .featured-card .featured-price{font-size:16px}
-    .featured-card .featured-add{min-height:37px;font-size:14px}
     .home-reviews-section{padding:30px 10px 38px}
     .home-reviews-section h2{font-size:29px}
     .home-order-cta{width:94%;border-radius:21px;padding:34px 14px;margin-bottom:18px}
@@ -241,4 +219,155 @@ body>main{flex:1}
 @media(max-width:380px){
     .welcome-box{width:78%;max-width:270px;padding:13px}
     #welcomeOverlay .welcome-cartoon{width:95px!important}
+}
+
+
+
+/* =====================================================
+   GIVE YOUR REVIEW
+===================================================== */
+
+.review-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:210px;
+    height:52px;
+    padding:0 22px;
+    border-radius:28px;
+    text-decoration:none;
+    color:#fff !important;
+    background:linear-gradient(135deg,#754522,#4E2A18);
+    border:2px solid #D1AA43;
+    font-size:17px;
+    font-weight:700;
+    box-shadow:0 8px 22px rgba(75,42,24,.25);
+    cursor:pointer;
+    transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.review-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(75,42,24,.30);
+}
+
+.review-btn:active{
+    transform:scale(.96);
+}
+
+.review-modal{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100dvh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(45,25,15,.62);
+    backdrop-filter:blur(5px);
+    z-index:999999;
+}
+
+.review-modal.show{
+    display:flex;
+}
+
+.review-box{
+    position:relative;
+    width:100%;
+    max-width:360px;
+    padding:30px 22px 25px;
+    text-align:center;
+    background:linear-gradient(180deg,#FFFDF9,#F8EDDD);
+    border:1px solid #D8B85A;
+    border-radius:28px;
+    box-shadow:0 20px 55px rgba(40,22,12,.30);
+    animation:reviewBoxIn .25s ease;
+}
+
+@keyframes reviewBoxIn{
+    from{opacity:0;transform:scale(.88) translateY(15px);}
+    to{opacity:1;transform:scale(1) translateY(0);}
+}
+
+.review-close{
+    position:absolute;
+    top:10px;
+    right:13px;
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:50%;
+    background:#F1E4D2;
+    color:#6B4226;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.review-icon{
+    width:62px;
+    height:62px;
+    margin:0 auto 12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:linear-gradient(135deg,#FFF3C9,#F5DF9B);
+    font-size:30px;
+    box-shadow:0 5px 15px rgba(201,162,39,.20);
+}
+
+.review-box h2{
+    margin:0;
+    color:#5B321E;
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+}
+
+.review-box p{
+    margin:7px 0 20px;
+    color:#8C7763;
+    font-size:14px;
+}
+
+.review-option{
+    width:100%;
+    height:52px;
+    margin-top:11px;
+    border-radius:17px;
+    background:#fff;
+    border:1px solid #E0D0B8;
+    color:#57321E;
+    font-family:'Outfit',sans-serif;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(65,38,20,.07);
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+
+.review-option:hover{
+    transform:translateY(-2px);
+    border-color:#C9A227;
+    box-shadow:0 8px 20px rgba(65,38,20,.12);
+}
+
+.review-option:active{
+    transform:scale(.97);
+}
+
+.review-option.excellent{border-color:#D6B45A;}
+.review-option.good{border-color:#B9D8BF;}
+.review-option.improve{border-color:#E0C6A9;}
+
+@media(max-width:768px){
+    .review-box{
+        max-width:330px;
+        padding:27px 18px 22px;
+        border-radius:25px;
+    }
+    .review-box h2{font-size:25px;}
+    .review-option{height:50px;font-size:16px;}
+    .review-btn{min-width:190px;height:49px;font-size:16px;}
 }

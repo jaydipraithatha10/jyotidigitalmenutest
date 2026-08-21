@@ -35,6 +35,15 @@
     </div>
 </header>
 
+
+<!-- GIVE YOUR REVIEW -->
+<a href="javascript:void(0)"
+   class="review-btn"
+   onclick="openReviewOptions()">
+    ⭐ Give Your Review
+</a>
+
+
 <main>
 
     <!-- PREMIUM HERO -->
@@ -66,18 +75,6 @@
             </span>
             <b>→</b>
         </a>
-    </section>
-
-    <!-- FEATURED PRODUCTS -->
-    <section id="featuredSection" class="featured-section" hidden>
-        <div class="featured-heading">
-            <div>
-                <span class="section-kicker">OUR SPECIAL PICKS</span>
-                <h2>⭐ Featured Products</h2>
-                <p>Our selected favourites for you</p>
-            </div>
-        </div>
-        <div id="featuredProductList" class="featured-product-grid"></div>
     </section>
 
     <!-- SEARCH -->
@@ -234,6 +231,93 @@ if("serviceWorker" in navigator){
     });
 }
 </script>
+
+
+<!-- =====================================================
+     GIVE YOUR REVIEW MODAL
+===================================================== -->
+<div id="reviewModal" class="review-modal">
+
+    <div class="review-box">
+
+        <button
+            class="review-close"
+            onclick="closeReviewOptions()">
+            ×
+        </button>
+
+        <div class="review-icon">⭐</div>
+
+        <h2>Give Your Review</h2>
+
+        <p>Select your experience</p>
+
+        <button
+            class="review-option excellent"
+            onclick="sendReview('Excellent')">
+            ⭐ Excellent
+        </button>
+
+        <button
+            class="review-option good"
+            onclick="sendReview('Good')">
+            👍 Good
+        </button>
+
+        <button
+            class="review-option improve"
+            onclick="sendReview('Need Improvement')">
+            🛠️ Need Improvement
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script>
+function openReviewOptions(){
+    const modal = document.getElementById("reviewModal");
+    if(modal) modal.classList.add("show");
+}
+
+function closeReviewOptions(){
+    const modal = document.getElementById("reviewModal");
+    if(modal) modal.classList.remove("show");
+}
+
+function sendReview(review){
+    const phone = "919712149344";
+
+    const message =
+`🪔 *Jyoti Gruh Udhyog*
+
+⭐ Customer Review
+
+My Experience: *${review}*
+
+Thank you 🙏`;
+
+    const whatsappURL =
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+    closeReviewOptions();
+}
+
+document.addEventListener("click", function(event){
+    const modal = document.getElementById("reviewModal");
+
+    if(modal && event.target === modal){
+        closeReviewOptions();
+    }
+});
+</script>
+
 
 </body>
 </html>
