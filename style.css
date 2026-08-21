@@ -222,40 +222,49 @@ body>main{flex:1}
 }
 
 
+/* =========================================================
+   HOME ONLY — CUSTOMER REVIEW
+   These selectors are intentionally scoped to Home page.
+========================================================= */
 
-/* =====================================================
-   GIVE YOUR REVIEW
-===================================================== */
+.home-review-section{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 15px 18px;
+}
 
-.review-btn{
+.home-review-btn{
+    appearance:none;
+    border:2px solid #D1AA43;
+    border-radius:28px;
+    min-width:215px;
+    min-height:52px;
+    padding:0 24px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    min-width:210px;
-    height:52px;
-    padding:0 22px;
-    border-radius:28px;
-    text-decoration:none;
-    color:#fff !important;
     background:linear-gradient(135deg,#754522,#4E2A18);
-    border:2px solid #D1AA43;
+    color:#fff;
+    font-family:'Outfit',sans-serif;
     font-size:17px;
     font-weight:700;
-    box-shadow:0 8px 22px rgba(75,42,24,.25);
     cursor:pointer;
+    box-shadow:0 8px 22px rgba(75,42,24,.25);
     transition:transform .2s ease,box-shadow .2s ease;
 }
 
-.review-btn:hover{
+.home-review-btn:hover{
     transform:translateY(-2px);
     box-shadow:0 12px 28px rgba(75,42,24,.30);
 }
 
-.review-btn:active{
+.home-review-btn:active{
     transform:scale(.96);
 }
 
-.review-modal{
+.home-review-modal{
     position:fixed;
     inset:0;
     width:100%;
@@ -269,11 +278,11 @@ body>main{flex:1}
     z-index:999999;
 }
 
-.review-modal.show{
+.home-review-modal.show{
     display:flex;
 }
 
-.review-box{
+.home-review-box{
     position:relative;
     width:100%;
     max-width:360px;
@@ -283,15 +292,15 @@ body>main{flex:1}
     border:1px solid #D8B85A;
     border-radius:28px;
     box-shadow:0 20px 55px rgba(40,22,12,.30);
-    animation:reviewBoxIn .25s ease;
+    animation:homeReviewBoxIn .25s ease;
 }
 
-@keyframes reviewBoxIn{
+@keyframes homeReviewBoxIn{
     from{opacity:0;transform:scale(.88) translateY(15px);}
     to{opacity:1;transform:scale(1) translateY(0);}
 }
 
-.review-close{
+.home-review-close{
     position:absolute;
     top:10px;
     right:13px;
@@ -305,7 +314,7 @@ body>main{flex:1}
     cursor:pointer;
 }
 
-.review-icon{
+.home-review-icon{
     width:62px;
     height:62px;
     margin:0 auto 12px;
@@ -318,20 +327,20 @@ body>main{flex:1}
     box-shadow:0 5px 15px rgba(201,162,39,.20);
 }
 
-.review-box h2{
+.home-review-box h2{
     margin:0;
     color:#5B321E;
     font-family:'Playfair Display',serif;
     font-size:28px;
 }
 
-.review-box p{
+.home-review-box p{
     margin:7px 0 20px;
     color:#8C7763;
     font-size:14px;
 }
 
-.review-option{
+.home-review-option{
     width:100%;
     height:52px;
     margin-top:11px;
@@ -347,27 +356,43 @@ body>main{flex:1}
     transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
 }
 
-.review-option:hover{
+.home-review-option:hover{
     transform:translateY(-2px);
     border-color:#C9A227;
     box-shadow:0 8px 20px rgba(65,38,20,.12);
 }
 
-.review-option:active{
+.home-review-option:active{
     transform:scale(.97);
 }
 
-.review-option.excellent{border-color:#D6B45A;}
-.review-option.good{border-color:#B9D8BF;}
-.review-option.improve{border-color:#E0C6A9;}
+.home-review-excellent{border-color:#D6B45A;}
+.home-review-good{border-color:#B9D8BF;}
+.home-review-improve{border-color:#E0C6A9;}
 
 @media(max-width:768px){
-    .review-box{
+    .home-review-section{
+        padding:6px 12px 15px;
+    }
+
+    .home-review-btn{
+        min-width:195px;
+        min-height:49px;
+        font-size:16px;
+    }
+
+    .home-review-box{
         max-width:330px;
         padding:27px 18px 22px;
         border-radius:25px;
     }
-    .review-box h2{font-size:25px;}
-    .review-option{height:50px;font-size:16px;}
-    .review-btn{min-width:190px;height:49px;font-size:16px;}
+
+    .home-review-box h2{
+        font-size:25px;
+    }
+
+    .home-review-option{
+        height:50px;
+        font-size:16px;
+    }
 }

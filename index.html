@@ -35,15 +35,6 @@
     </div>
 </header>
 
-
-<!-- GIVE YOUR REVIEW -->
-<a href="javascript:void(0)"
-   class="review-btn"
-   onclick="openReviewOptions()">
-    ⭐ Give Your Review
-</a>
-
-
 <main>
 
     <!-- PREMIUM HERO -->
@@ -54,6 +45,19 @@
                  onerror="this.src='placeholder.webp'">
         </div>
     </section>
+
+<!-- =====================================================
+     HOME ONLY — GIVE YOUR REVIEW
+===================================================== -->
+<section class="home-review-section" aria-label="Customer review">
+    <button
+        type="button"
+        class="home-review-btn"
+        onclick="openReviewOptions(event)">
+        ⭐ Give Your Review
+    </button>
+</section>
+
 
     <!-- QUICK ACTIONS -->
     <section class="premium-home-actions" aria-label="Quick actions">
@@ -234,90 +238,124 @@ if("serviceWorker" in navigator){
 
 
 <!-- =====================================================
-     GIVE YOUR REVIEW MODAL
+     HOME ONLY — REVIEW OPTIONS
 ===================================================== -->
-<div id="reviewModal" class="review-modal">
+<div
+    id="homeReviewModal"
+    class="home-review-modal"
+    aria-hidden="true">
 
-    <div class="review-box">
+    <div
+        class="home-review-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="homeReviewTitle">
 
         <button
-            class="review-close"
+            type="button"
+            class="home-review-close"
+            aria-label="Close"
             onclick="closeReviewOptions()">
             ×
         </button>
 
-        <div class="review-icon">⭐</div>
+        <div class="home-review-icon">⭐</div>
 
-        <h2>Give Your Review</h2>
+        <h2 id="homeReviewTitle">Give Your Review</h2>
 
         <p>Select your experience</p>
 
         <button
-            class="review-option excellent"
+            type="button"
+            class="home-review-option home-review-excellent"
             onclick="sendReview('Excellent')">
             ⭐ Excellent
         </button>
 
         <button
-            class="review-option good"
+            type="button"
+            class="home-review-option home-review-good"
             onclick="sendReview('Good')">
             👍 Good
         </button>
 
         <button
-            class="review-option improve"
+            type="button"
+            class="home-review-option home-review-improve"
             onclick="sendReview('Need Improvement')">
             🛠️ Need Improvement
         </button>
 
     </div>
-
 </div>
 
 
-
 <script>
-function openReviewOptions(){
-    const modal = document.getElementById("reviewModal");
-    if(modal) modal.classList.add("show");
-}
+(function () {
 
-function closeReviewOptions(){
-    const modal = document.getElementById("reviewModal");
-    if(modal) modal.classList.remove("show");
-}
+    window.openReviewOptions = function (event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
 
-function sendReview(review){
-    const phone = "919712149344";
+        const modal = document.getElementById("homeReviewModal");
 
-    const message =
+        if (!modal) return;
+
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("home-review-open");
+    };
+
+    window.closeReviewOptions = function () {
+        const modal = document.getElementById("homeReviewModal");
+
+        if (!modal) return;
+
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("home-review-open");
+    };
+
+    window.sendReview = function (review) {
+        const phone = "919712149344";
+
+        const message =
 `🪔 *Jyoti Gruh Udhyog*
 
-⭐ Customer Review
-
+⭐ *Customer Review*
 My Experience: *${review}*
 
 Thank you 🙏`;
 
-    const whatsappURL =
-        "https://wa.me/" +
-        phone +
-        "?text=" +
-        encodeURIComponent(message);
+        const whatsappURL =
+            "https://wa.me/" +
+            phone +
+            "?text=" +
+            encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank");
-    closeReviewOptions();
-}
+        window.open(whatsappURL, "_blank", "noopener");
 
-document.addEventListener("click", function(event){
-    const modal = document.getElementById("reviewModal");
-
-    if(modal && event.target === modal){
         closeReviewOptions();
-    }
-});
-</script>
+    };
 
+    document.addEventListener("click", function (event) {
+        const modal = document.getElementById("homeReviewModal");
+
+        if (modal && event.target === modal) {
+            closeReviewOptions();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeReviewOptions();
+        }
+    });
+
+})();
+</script>
 
 </body>
 </html>
